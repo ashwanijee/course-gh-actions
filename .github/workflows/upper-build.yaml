@@ -1,0 +1,19 @@
+name: upper-build
+
+on:
+  push:
+    paths:
+      - 'upper/**'
+      - '.github/workflows/upper-build.yaml'
+      - 'README.md'
+      
+  workflow_dispatch: #manual
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: go version
+
+
+    

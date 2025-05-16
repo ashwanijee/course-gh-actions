@@ -27,6 +27,8 @@ jobs:
           ls
           go test
           ./upper foo the bar
+        working-directory: upper
+
 
       
 

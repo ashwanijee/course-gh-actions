@@ -28,7 +28,11 @@ jobs:
       - run: ls
       - run: go build
       - run: ls
-      - run: go test -v   
+      - run: go test -v
+      - uses: actions/upload-artifact@v4
+        with:
+          name: upper-capture
+          path: upper/upper
 
 
     

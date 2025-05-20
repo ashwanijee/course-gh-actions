@@ -26,10 +26,15 @@ jobs:
       - run: go mod download
         working-directory: upper
       - run: ./build.xplat.sh
-      - uses: actions/upload-artifact@v4
+      - uses: softprops/action-gh-release@v2
         with:
-          name: build
-          path: upper/bin/upper*
+          files: upper/bin/upper*
+          body: "Binaries for the upper (go) command line tool"
+          tag_name: ${{ github.ref_name }}
+      # - uses: actions/upload-artifact@v4
+      #   with:
+      #     name: build
+      #     path: upper/bin/upper*
 
 
     

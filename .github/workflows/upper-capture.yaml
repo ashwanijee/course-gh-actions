@@ -10,8 +10,12 @@ on:
   workflow_dispatch: #manual
 
 jobs:
-  build:
-    runs-on: macos-latest
+  capture:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     defaults:
       run:
         working-directory: upper
@@ -31,8 +35,8 @@ jobs:
       - run: go test -v
       - uses: actions/upload-artifact@v4
         with:
-          name: upper-capture
-          path: upper/upper
+          name: "build-${{ matrix.os }}"
+          path: upper/upper*
 
 
     

@@ -13,16 +13,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var newSummaries1 = new[]
-{
-    "Brrrrr", "Yikes", "Frozen", "Hot", "Ouch", "StopIt"
-};
-
-var newSummaries = new[]
-{
-    "Brrrrr", , "StopIt"
-};
-
 var summaries = new[]
 {
     "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
